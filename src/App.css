@@ -1,38 +1,83 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.heading {
+  color: navy;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.heading i {
+  font-size: 1.5rem;
+}
+.room {
+  width: 40rem;
+  height: 15rem;
+  border: 1px solid #222;
+  border-radius: 1px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.room .row {
+  height: calc(15rem / 3);
+  width: 100%;
+  box-sizing: border-box;
+
+  /* border-bottom: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.room .row:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  width: 94%;
+  height: 1px;
+  background-color: #222;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.room .row .col:nth-child(1) {
+  text-transform: uppercase;
+  color: navy;
+}
+.room .row .col:nth-child(2) {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.room .row .col:nth-child(1) i {
+  width: 3rem;
+}
+.room .row .col .btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  /* font-size: 1.8rem; */
+  font-weight: bold;
+  background-color: navy;
+  color: aliceblue;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.room .row .col .btn.add {
+  background-color: orangered;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.off {
+  opacity: 0.4 !important;
+  cursor: no-drop !important;
 }
