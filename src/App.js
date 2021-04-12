@@ -26,7 +26,7 @@ const subRoom=()=>{
     setRoom(newRoom);
     if((adult+children)>(room-1)*4){
       const totalRemain=(adult+children)-(room-1)*4;
-      if(children>totalRemain){
+      if(children>=totalRemain){
         const newChildren=children-totalRemain;
         setChildren(newChildren);
       }
